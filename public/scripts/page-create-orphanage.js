@@ -7,7 +7,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png')
 
 //create icon
 const icon = L.icon({
-    iconUrl: "./public/images/map-marker.svg",
+    iconUrl: "/images/map-marker.svg",
     iconSize: [58, 68],
     iconAnchor: [29,68],
 })
@@ -22,7 +22,7 @@ let marker;
      const lng = event.latlng.lng;
 
      document.querySelector('[name=lat]').value = lat;
-     document.querySelector('[name=lng]').value = lat;
+     document.querySelector('[name=lng]').value = lng;
 
      //remove icon 
 
@@ -78,16 +78,16 @@ function deleteField(event){
 
 function toggleSelect(event){
     //retirar a class .active (dos botões)
-    document.querySelectorAll('.button-selec button')
-    .forEach(button => button.classList.remove('active'))
+    document.querySelectorAll('.button-select button')
+    .forEach(button => button.classList.remove("active"))
 
     //colocar a class .active no botão clicado
     const button = event.currentTarget
-    button.classList.add('active')
+    button.classList.add("active")
 
     //atualizar o meu input hidden com o valor selecionado
     const input = document.querySelector('[name="open_on_weekends"]')
 
     input.value = button.dataset.value
-
 }
+
